@@ -9,6 +9,7 @@ namespace Mahou
     {
         public float lifetime;
         public DamageType damageType;
+        public Collider ignoreCollider;
 
         [HideInInspector]
         public float dmg;
@@ -27,13 +28,16 @@ namespace Mahou
 
         private void OnTriggerEnter(Collider other)
         {
+            if (other == ignoreCollider)
+                return;
             if (Tags.IsValidTarget(other.gameObject.tag))
             {
-                Destroy(gameObject);
-
+                Debug.Log("OnTriggerEnter " + other.name);
                 var dmgReceiver = other.gameObject.GetComponent<DamageReceiverBase>();
                 if (dmgReceiver != null)
                     dmgReceiver.OnReceiveDamage(damageType, dmg, attacker);
+
+                Destroy(gameObject);
             }
         }
     }

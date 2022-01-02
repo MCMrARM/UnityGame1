@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0d8bd424babc0c4b8942ce624eaa3d9, type: 3}
+  m_Name: Projectile_Fireball
+  m_EditorClassIdentifier: 
+  type: 0
+  castTime: 0
+  cooldownGroup: {fileID: 11400000, guid: 37c069a7e25659942ba22278b926c0f9, type: 2}
+  prefab: {fileID: 7857681216157884790, guid: 8d30cb4b618302c4e813d4ca3cc02688, type: 3}
+  projectileSpeed: 50
+  launchLocation: 0

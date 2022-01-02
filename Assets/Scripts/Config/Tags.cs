@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Mahou.Config
+﻿namespace Mahou.Config
 {
     struct Tags
     {
@@ -12,7 +6,7 @@ namespace Mahou.Config
 
         public static bool IsValidTarget(string tag)
         {
-            return tag != PLAYER;
+            return true;
         }
     }
 }
