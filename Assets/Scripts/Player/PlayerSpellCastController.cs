@@ -10,6 +10,7 @@ namespace Mahou
         private InputManager _inputManager;
         private SpellCaster _spellCater;
         public SpellConfig spellConfig;
+        public Transform baseTransform;
 
         void Start()
         {
@@ -22,16 +23,16 @@ namespace Mahou
             if (_inputManager.GetFireInput() || Application.isEditor)
             {
                 float maxDist = 100f;
-                Vector3 dir = transform.TransformDirection(Vector3.forward);
+                Vector3 dir = baseTransform.TransformDirection(Vector3.forward);
                 Vector3 target = dir * maxDist;
                 RaycastHit hit;
-                if (Physics.Raycast(transform.position, dir, out hit, maxDist, LayerMasks.MaskPlayerEnemyRaycast))
+                if (Physics.Raycast(baseTransform.position, dir, out hit, maxDist, LayerMasks.MaskPlayerEnemyRaycast))
                 {
-                    Debug.DrawRay(transform.position, dir * hit.distance, Color.yellow);
+                    Debug.DrawRay(baseTransform.position, dir * hit.distance, Color.yellow);
                     target = dir * hit.distance;
                 }
                 if (_inputManager.GetFireInput())
-                    _spellCater.BeginCast(spellConfig, transform.position + target);
+                    _spellCater.BeginCast(spellConfig, baseTransform.position + target);
             }
         }
     }
