@@ -39,7 +39,7 @@ namespace Mahou
             m_Motion.y -= MovementConstants.GravityStrength * Time.deltaTime;
             if (_inputManager.GetJumpInput() && m_CharacterController.isGrounded)
                 m_Motion.y = MovementConstants.JumpStrength;
-            m_CharacterController.Move(m_Motion);
+            m_CharacterController.Move(m_Motion * Time.deltaTime);
         }
 
 
