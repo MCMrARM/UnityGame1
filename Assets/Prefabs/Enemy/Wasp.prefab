@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1fcaf0054ff5f547b5790aa8a4a9ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canTargetDirect: 0
   useModelRotX: 1
 --- !u!1 &9017002802073493731
 GameObject:
@@ -60,6 +61,8 @@ GameObject:
   - component: {fileID: 7663636513225118955}
   - component: {fileID: 307928383626545818}
   - component: {fileID: 840278258415830116}
+  - component: {fileID: 57933466791392755}
+  - component: {fileID: 8573229232600205713}
   m_Layer: 0
   m_Name: Wasp
   m_TagString: Untagged
@@ -194,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9ffc2c3b02d3fd40b951e164b91ecf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellCaster: {fileID: 0}
+  spellCaster: {fileID: 840278258415830116}
   attackSpell: {fileID: 11400000, guid: 7607617e90bd0264094d1b45a8d52039, type: 2}
 --- !u!114 &840278258415830116
 MonoBehaviour:
@@ -212,6 +215,32 @@ MonoBehaviour:
   _editorLocationValues:
   - {fileID: 6562315229100365449}
   targetAnimator: {fileID: 6685215932534258369}
+--- !u!114 &57933466791392755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9017002802073493731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e38cbae453d3a46458af4ea648f6b307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updateInterval: 0.25
+  range: 10
+--- !u!114 &8573229232600205713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9017002802073493731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f3db0ed1f0302d4282233dcac8c43d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6179629220036670430
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -438,6 +467,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2138125760253553101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7036581951365978999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acea20fc5929ef749931508405e5fcac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  caster: {fileID: 840278258415830116}
 --- !u!114 &5376875185305146571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,16 +494,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetRenderer: {fileID: 5375049622056234414}
   destroyOnComplete: {fileID: 9017002802073493731}
---- !u!114 &2138125760253553101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7036581951365978999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acea20fc5929ef749931508405e5fcac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  caster: {fileID: 840278258415830116}

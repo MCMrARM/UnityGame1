@@ -11,6 +11,8 @@ namespace Mahou.EnemyAI
 
         public override bool Update()
         {
+            if (target == null)
+                return true;
             RotateYaw(target.position, 1f);
             if (spell.type == SpellType.Projectile)
                 BeginCast(spell, target.position);
