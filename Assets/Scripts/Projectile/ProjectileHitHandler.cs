@@ -32,7 +32,6 @@ namespace Mahou
                 return;
             if (Tags.IsValidTarget(other.gameObject.tag))
             {
-                Debug.Log("OnTriggerEnter " + other.name);
                 var dmgReceiver = other.gameObject.GetComponent<DamageReceiverBase>();
                 if (dmgReceiver != null)
                     dmgReceiver.OnReceiveDamage(damageType, dmg, attacker);
