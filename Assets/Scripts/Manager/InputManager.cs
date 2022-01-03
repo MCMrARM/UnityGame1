@@ -14,7 +14,7 @@ namespace Mahou
 
         public bool CanMovePlayer
         {
-            get => !InMenu && !GameManager.Instance.Paused;
+            get => !InMenu && !GameManager.Instance.Paused && !Input.GetKey(KeyCode.LeftAlt);
         }
 
         public bool ShouldLockCursor

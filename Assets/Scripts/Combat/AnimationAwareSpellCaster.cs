@@ -9,9 +9,9 @@ namespace Mahou.Combat
         public Animator targetAnimator;
         private bool animDone = false;
 
-        public override bool BeginCast(SpellConfig spell)
+        public override bool BeginCast(SpellConfig spell, Vector3 target)
         {
-            if (base.BeginCast(spell))
+            if (base.BeginCast(spell, target))
             {
                 targetAnimator.SetBool("Attacking", true); // TODO:
                 return true;

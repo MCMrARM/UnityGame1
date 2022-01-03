@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Mahou.UI
 {
@@ -7,6 +8,13 @@ namespace Mahou.UI
 
         public void UI_Unpause()
         {
+            GameManager.Instance.Paused = false;
+        }
+
+        public void UI_Reload()
+        {
+            var scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name);
             GameManager.Instance.Paused = false;
         }
 

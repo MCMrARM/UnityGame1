@@ -12,7 +12,8 @@ namespace Mahou
             get => _paused;
             set {
                 _paused = value;
-                PauseAction();
+                if (PauseAction != null)
+                    PauseAction();
 
                 Debug.Log("Game pause = " + _paused);
                 Time.timeScale = value ? 0f : 1f;

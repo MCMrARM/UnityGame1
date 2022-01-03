@@ -13,7 +13,7 @@ namespace Mahou.EnemyAI
         {
             RotateYaw(target.position, 1f);
             if (spell.type == SpellType.Projectile)
-                BeginCast(spell);
+                BeginCast(spell, target.position);
             return false;
         }
 

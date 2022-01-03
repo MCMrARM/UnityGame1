@@ -38,9 +38,9 @@ namespace Mahou.EnemyAI
             return StateMachine.spellCaster.CanCast(spell);
         }
 
-        protected bool BeginCast(SpellConfig spell)
+        protected bool BeginCast(SpellConfig spell, Vector3 target)
         {
-            return StateMachine.spellCaster.BeginCast(spell);
+            return StateMachine.spellCaster.BeginCast(spell, target);
         }
 
         protected void CancelCast()

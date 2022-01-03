@@ -27,6 +27,7 @@ namespace Mahou
                 return;
             }
             _instance = this as T;
+            DontDestroyOnLoad(gameObject);
         }
 
     }

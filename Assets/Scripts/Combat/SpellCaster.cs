@@ -21,6 +21,7 @@ namespace Mahou.Combat
         private SpellCDManager _spellCDManager = new SpellCDManager();
         private SpellConfig _castingSpell = null;
         private float _castingSpellStartTime;
+        private Vector3 _castingSpellTarget;
 
         public SpellConfig CastingSpell
         {
@@ -45,7 +46,7 @@ namespace Mahou.Combat
             return _spellCDManager.CanCast(spell);
         }
 
-        public virtual bool BeginCast(SpellConfig spell)
+        public virtual bool BeginCast(SpellConfig spell, Vector3 target)
         {
             if (_castingSpell == spell)
                 return true;
@@ -54,6 +55,7 @@ namespace Mahou.Combat
 
             _castingSpell = spell;
             _castingSpellStartTime = Time.time;
+            _castingSpellTarget = target;
             if (CanFinishCast())
                 FinishCast();
             return true;
@@ -82,7 +84,7 @@ namespace Mahou.Combat
             if (spell.type == SpellType.Projectile)
             {
                 var pspell = (ProjectileSpellConfig) spell;
-                SpawnProjectile(pspell.prefab, _locations[(int)pspell.launchLocation], _locationOptions[(int)pspell.launchLocation], pspell.projectileSpeed);
+                SpawnProjectile(pspell.prefab, _locations[(int)pspell.launchLocation], _castingSpellTarget, _locationOptions[(int)pspell.launchLocation], pspell.projectileSpeed);
             }
 
             _castingSpell = null;
@@ -96,14 +98,17 @@ namespace Mahou.Combat
             }
         }
 
-        private void SpawnProjectile(GameObject prefab, Transform shootPoint, LocationOptions shootPointOptions, float shootSpeed)
+        private void SpawnProjectile(GameObject prefab, Transform shootPoint, Vector3 targetPoint, LocationOptions shootPointOptions, float shootSpeed)
         {
             var rot = shootPoint.rotation.eulerAngles;
             if (shootPointOptions.useModelRotX)
                 rot.x = transform.rotation.eulerAngles.x;
             var projectile = Instantiate(prefab, shootPoint.position, Quaternion.identity);
+            if (shootPointOptions.canTargetDirect)
+                projectile.GetComponent<Rigidbody>().velocity = (targetPoint - shootPoint.position).normalized * shootSpeed;
+            else
+                projectile.GetComponent<Rigidbody>().velocity = (Quaternion.Euler(rot) * Vector3.forward) * shootSpeed;
             //projectile.transform.position += (Quaternion.Euler(rot) * Vector3.forward);
-            projectile.GetComponent<Rigidbody>().velocity = (Quaternion.Euler(rot) * Vector3.forward)  * shootSpeed;
             var projectileInfo = projectile.GetComponent<ProjectileHitHandler>();
             projectileInfo.attacker = _statManager;
             projectileInfo.dmg = _statManager.CalculateAttack(projectileInfo.damageType);

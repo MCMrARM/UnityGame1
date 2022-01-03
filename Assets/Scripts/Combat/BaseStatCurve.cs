@@ -60,6 +60,7 @@ namespace Mahou.Combat
     }
 
 
+#if UNITY_EDITOR
     [CustomPropertyDrawer(typeof(BaseStatCurve))]
     public class BaseStatCurveDrawer : PropertyDrawer
     {
@@ -106,5 +107,6 @@ namespace Mahou.Combat
             EditorGUI.EndProperty();
         }
     }
+#endif
 
 }
