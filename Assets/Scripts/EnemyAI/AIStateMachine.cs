@@ -7,7 +7,10 @@ namespace Mahou.EnemyAI
     public class AIStateMachine : MonoBehaviour
     {
         public SpellCaster spellCaster;
+        public Rigidbody rigidbody;
         private AIState _currentState;
+        public float moveSpeed = 2f;
+        public float turnSpeed = 2f;
 
         public AIState CurrentState
         {
@@ -29,6 +32,8 @@ namespace Mahou.EnemyAI
         {
             if (spellCaster == null)
                 spellCaster = GetComponent<SpellCaster>();
+            if (rigidbody == null)
+                rigidbody = GetComponent<Rigidbody>();
         }
 
         void Update()

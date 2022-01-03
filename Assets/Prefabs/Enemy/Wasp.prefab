@@ -198,7 +198,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellCaster: {fileID: 840278258415830116}
+  rigidbody: {fileID: 9017002802073493743}
+  moveSpeed: 2
+  turnSpeed: 2
   attackSpell: {fileID: 11400000, guid: 7607617e90bd0264094d1b45a8d52039, type: 2}
+  farRangeKeepConfig:
+    minRange: 5
+    maxRange: 10
+    nearingMoveSpeedMul: 1
+    distancingMoveSpeedMul: 1
 --- !u!114 &840278258415830116
 MonoBehaviour:
   m_ObjectHideFlags: 0

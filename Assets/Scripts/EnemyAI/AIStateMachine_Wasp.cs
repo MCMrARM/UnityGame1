@@ -11,6 +11,7 @@ namespace Mahou.EnemyAI
         private AITargetSelector _targetSelector;
         public SpellConfig attackSpell;
         private bool idle = true;
+        public KeepWithinRangeConfig farRangeKeepConfig;
 
         private void Start()
         {
@@ -25,7 +26,7 @@ namespace Mahou.EnemyAI
                 if (target != null)
                 {
                     idle = false;
-                    CurrentState = new AIState_Wasp_FarAttack() { spell = attackSpell, target = target.transform };
+                    CurrentState = new AIState_Wasp_FarAttack() { spell = attackSpell, target = target.transform, rangeKeepConfig = farRangeKeepConfig };
                 }
             }
         }
