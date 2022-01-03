@@ -25,7 +25,7 @@ namespace Mahou
 
         private void Update()
         {
-            if (Input.GetButtonDown("Cancel"))
+            if (Input.GetButtonDown("Cancel") && !InMenu)
                 GameManager.Instance.Paused = !GameManager.Instance.Paused;
 
             Cursor.lockState = ShouldLockCursor ? CursorLockMode.Locked : CursorLockMode.None;

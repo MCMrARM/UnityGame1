@@ -14,6 +14,11 @@ namespace Mahou.Combat
             get => baseStats.HpBase.Compute(level);
         }
 
+        public bool Alive
+        {
+            get => hp > 0;
+        }
+
         private void Start()
         {
             hp = MaxHp;
