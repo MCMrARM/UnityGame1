@@ -57,7 +57,12 @@ namespace Mahou
 
         public bool GetJumpInput()
         {
-            return Input.GetButton("Jump") || Input.GetButtonDown("Jump");
+            return CanMovePlayer && (Input.GetButton("Jump") || Input.GetButtonDown("Jump"));
+        }
+
+        public bool GetFireInput()
+        {
+            return CanMovePlayer && Input.GetButton("Fire1");
         }
 
     }

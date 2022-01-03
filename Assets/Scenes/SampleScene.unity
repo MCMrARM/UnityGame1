@@ -750,6 +750,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 228015116}
+  - component: {fileID: 228015117}
   m_Layer: 0
   m_Name: ShootPoint
   m_TagString: Untagged
@@ -771,6 +772,19 @@ Transform:
   m_Father: {fileID: 1687258585}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &228015117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228015115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1fcaf0054ff5f547b5790aa8a4a9ffc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useModelRotX: 0
 --- !u!1 &241708287
 GameObject:
   m_ObjectHideFlags: 0
@@ -3151,9 +3165,10 @@ GameObject:
   - component: {fileID: 1711260835}
   - component: {fileID: 1711260834}
   - component: {fileID: 1711260833}
-  - component: {fileID: 1711260836}
   - component: {fileID: 1711260837}
   - component: {fileID: 1711260838}
+  - component: {fileID: 1711260839}
+  - component: {fileID: 1711260836}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3225,9 +3240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eeecfc11e29c374981f38f2aa02abdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 7857681216157884790, guid: 8d30cb4b618302c4e813d4ca3cc02688, type: 3}
-  shootPoint: {fileID: 228015116}
-  shootSpeed: 50
+  spellConfig: {fileID: 11400000, guid: 7607617e90bd0264094d1b45a8d52039, type: 2}
 --- !u!114 &1711260837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3284,6 +3297,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statManager: {fileID: 1711260837}
+--- !u!114 &1711260839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711260832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62003d36b4f8af947a86b57467f55c29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _editorLocationKeys: 00000000
+  _editorLocationValues:
+  - {fileID: 228015116}
 --- !u!1 &1766306628
 GameObject:
   m_ObjectHideFlags: 0
