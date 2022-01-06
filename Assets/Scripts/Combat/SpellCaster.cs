@@ -41,6 +41,11 @@ namespace Mahou.Combat
             }
         }
 
+        public float GetCD(SpellConfig spell)
+        {
+            return _spellCDManager.GetCD(spell);
+        }
+
         public bool CanCast(SpellConfig spell)
         {
             return _spellCDManager.CanCast(spell);

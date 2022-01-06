@@ -9,6 +9,14 @@ namespace Mahou.Combat
 
         private Dictionary<SpellCooldownGroup, float> spellCooldowns = new Dictionary<SpellCooldownGroup, float>();
 
+        public float GetCD(SpellConfig spell)
+        {
+            float val;
+            if (!spellCooldowns.TryGetValue(spell.cooldownGroup, out val))
+                return 0f;
+            return (Time.time > val ? 0f : val - Time.time);
+        }
+
         public bool CanCast(SpellConfig spell)
         {
             float val;
