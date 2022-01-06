@@ -17,7 +17,7 @@ namespace Mahou.EnemyAI
 
         private Dictionary<StatManager, float>[] _damageFrames;
         private Dictionary<StatManager, float> _damageSum = new Dictionary<StatManager, float>();
-        private int _currentDamageFrame = -1;
+        private int _currentDamageFrame = 0;
         private float _currentDamageFrameEnd = 0;
 
         private StatManager _topAttacker;
