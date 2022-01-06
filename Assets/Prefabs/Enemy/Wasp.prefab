@@ -200,7 +200,7 @@ MonoBehaviour:
   spellCaster: {fileID: 840278258415830116}
   rigidbody: {fileID: 9017002802073493743}
   moveSpeed: 2
-  turnSpeed: 2
+  turnSpeed: 6
   attackSpell: {fileID: 11400000, guid: 7607617e90bd0264094d1b45a8d52039, type: 2}
   farRangeKeepConfig:
     minRange: 5
@@ -249,6 +249,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f3db0ed1f0302d4282233dcac8c43d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageFrameCount: 5
+  damageFrameTime: 3
 --- !u!1001 &6179629220036670430
 PrefabInstance:
   m_ObjectHideFlags: 0

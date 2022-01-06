@@ -48,10 +48,10 @@ namespace Mahou.EnemyAI
             var t = StateMachine.gameObject.transform;
             var newAngles = Quaternion.LookRotation(pos - t.position, Vector3.up).eulerAngles;
             var currentAngles = t.rotation.eulerAngles;
-            if (currentAngles.y == newAngles.y)
-                return false;
             float curRotY = currentAngles.y % 360;
             float targetRotY = (180 + newAngles.y) % 360;
+            if (curRotY == targetRotY)
+                return false;
             if (targetRotY > curRotY && curRotY - (targetRotY - 360) < targetRotY - curRotY)
                 targetRotY -= 360;
             else if (curRotY > targetRotY && targetRotY - (curRotY - 360) < curRotY - targetRotY)
@@ -59,6 +59,16 @@ namespace Mahou.EnemyAI
             currentAngles.y = Mathf.MoveTowards(curRotY, targetRotY, StateMachine.turnSpeed * turnSpeedMul);
             t.rotation = Quaternion.Euler(currentAngles);
             return true;
+        }
+
+        protected bool IsYawWithin(Vector3 pos, float range)
+        {
+            var t = StateMachine.gameObject.transform;
+            var newAngles = Quaternion.LookRotation(pos - t.position, Vector3.up).eulerAngles;
+            var currentAngles = t.rotation.eulerAngles;
+            float curRotY = currentAngles.y % 360;
+            float targetRotY = (180 + newAngles.y) % 360;
+            return Math.Min(Mathf.Abs(targetRotY - curRotY), Mathf.Abs(curRotY + 360 - targetRotY)) < range;
         }
 
         protected bool CanCast(SpellConfig spell)
