@@ -18,14 +18,24 @@ namespace Mahou.EnemyAI
 
         abstract public bool Update();
 
+
+        private static KeepWithinRangeConfig MoveTowardsConfig = new KeepWithinRangeConfig()
+        {
+            minRange = 0f,
+            maxRange = 0.05f,
+            nearingMoveSpeedMul = 1f,
+            distancingMoveSpeedMul = 1f
+        };
+
         protected bool MoveTowards(Vector3 pos)
         {
-            return true;
+            return KeepWithinRange(pos, MoveTowardsConfig);
         }
 
         protected bool KeepWithinRange(Vector3 pos, KeepWithinRangeConfig config)
         {
             var t = StateMachine.gameObject.transform;
+            pos.y = t.position.y; // TODO:
             float dist = Vector3.Distance(pos, t.position);
             if (dist >= config.minRange && dist <= config.maxRange)
                 return false;
@@ -37,7 +47,7 @@ namespace Mahou.EnemyAI
             }
             else
             {
-                StateMachine.rigidbody.velocity = (pos - t.position).normalized * StateMachine.moveSpeed * config.nearingMoveSpeedMul;
+                StateMachine.rigidbody.velocity = (pos - t.position).normalized * Math.Min(dist * 10f, 1f) * StateMachine.moveSpeed * config.nearingMoveSpeedMul;
             }
 
             return true;

@@ -12,14 +12,22 @@ namespace Mahou.EnemyAI
         public SpellConfig attackSpell;
         private bool idle = true;
         public KeepWithinRangeConfig farRangeKeepConfig;
+        public float wanderRange;
 
-        private void Start()
+        protected override void Start()
         {
+            base.Start();
             _targetSelector = GetComponent<AITargetSelector>();
         }
 
         protected override void UpdateState(bool lastComplete)
         {
+            if (lastComplete)
+            {
+                CurrentState = new AIState_RandomWander() { range = wanderRange };
+                idle = true;
+            }
+
             if (idle)
             {
                 var target = _targetSelector.GetTarget();

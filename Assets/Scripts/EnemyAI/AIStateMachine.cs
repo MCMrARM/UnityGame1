@@ -8,6 +8,7 @@ namespace Mahou.EnemyAI
     {
         public SpellCaster spellCaster;
         public Rigidbody rigidbody;
+        public Vector3 startPos;
         private AIState _currentState;
         public float moveSpeed = 2f;
         public float turnSpeed = 2f;
@@ -28,12 +29,13 @@ namespace Mahou.EnemyAI
         }
 
 
-        private void Start()
+        protected virtual void Start()
         {
             if (spellCaster == null)
                 spellCaster = GetComponent<SpellCaster>();
             if (rigidbody == null)
                 rigidbody = GetComponent<Rigidbody>();
+            startPos = transform.position;
         }
 
         void Update()
@@ -49,5 +51,6 @@ namespace Mahou.EnemyAI
 
             UpdateState(lastComplete);
         }
+
     }
 }

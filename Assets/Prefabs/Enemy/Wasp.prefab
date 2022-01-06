@@ -199,6 +199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellCaster: {fileID: 840278258415830116}
   rigidbody: {fileID: 9017002802073493743}
+  startPos: {x: 0, y: 0, z: 0}
   moveSpeed: 2
   turnSpeed: 6
   attackSpell: {fileID: 11400000, guid: 7607617e90bd0264094d1b45a8d52039, type: 2}
@@ -207,6 +208,7 @@ MonoBehaviour:
     maxRange: 10
     nearingMoveSpeedMul: 1
     distancingMoveSpeedMul: 1
+  wanderRange: 2
 --- !u!114 &840278258415830116
 MonoBehaviour:
   m_ObjectHideFlags: 0
