@@ -3910,6 +3910,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1791536032515050717, guid: 304adfa733b92d249a93f45c5aac9fcd, type: 3}
+      propertyPath: deathPanel
+      value: 
+      objectReference: {fileID: 1736398458}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 304adfa733b92d249a93f45c5aac9fcd, type: 3}
 --- !u!114 &1559712553 stripped
@@ -4588,6 +4592,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.007887577, y: 0.11887972, z: 0.10703515}
   m_Center: {x: -0.007932588, y: 0.049437393, z: 0.04343954}
+--- !u!1 &1736398458 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3117826839815782398, guid: 3e63abd30849c214ea3a2883b57ac6ea, type: 3}
+  m_PrefabInstance: {fileID: 747244704}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1741140018
 GameObject:
   m_ObjectHideFlags: 0
