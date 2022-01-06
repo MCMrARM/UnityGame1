@@ -5,10 +5,12 @@ namespace Mahou.UI
     class MainMenuPanel : MenuPanel
     {
 
+        public TMPro.TMP_Dropdown levelNameDropDown;
+
         public void UI_LoadLevel()
         {
             var scene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene(levelNameDropDown.options[levelNameDropDown.value].text + "Scene");
         }
 
     }
