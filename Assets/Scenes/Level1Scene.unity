@@ -2411,6 +2411,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 12429263353345186, guid: 3e63abd30849c214ea3a2883b57ac6ea, type: 3}
+      propertyPath: spellListController
+      value: 
+      objectReference: {fileID: 1903052694}
     - target: {fileID: 1380061834373209488, guid: 3e63abd30849c214ea3a2883b57ac6ea, type: 3}
       propertyPath: caster
       value: 
@@ -5044,6 +5048,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.007887577, y: 0.11887972, z: 0.10703515}
   m_Center: {x: -0.007932588, y: 0.049437393, z: 0.04343954}
+--- !u!114 &1903052694 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4142035645105590436, guid: 304adfa733b92d249a93f45c5aac9fcd, type: 3}
+  m_PrefabInstance: {fileID: 1559712552}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70868de1402e5a74488e30d548c0d590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1944033430 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2936168650849764328, guid: ef87c8e9b1a5ca544ac894e820e330ba, type: 3}
