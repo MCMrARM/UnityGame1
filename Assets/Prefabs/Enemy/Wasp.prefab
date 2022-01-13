@@ -65,7 +65,7 @@ GameObject:
   - component: {fileID: 8573229232600205713}
   - component: {fileID: 4799620351759127055}
   - component: {fileID: 4155813970609971752}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wasp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
