@@ -861,6 +861,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2333532709711936582, guid: 755d1d74bcd6cd94a8ab7c18503f5f17, type: 3}
   m_PrefabInstance: {fileID: 1817252030}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &813226927 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4142035645105590436, guid: 304adfa733b92d249a93f45c5aac9fcd, type: 3}
+  m_PrefabInstance: {fileID: 1791536034079606901}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70868de1402e5a74488e30d548c0d590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &870648291 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1387920536622109853, guid: 755d1d74bcd6cd94a8ab7c18503f5f17, type: 3}
@@ -912,7 +923,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh21932
+  m_Name: pb_Mesh21954
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1602,7 +1613,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh21964
+  m_Name: pb_Mesh22052
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1839,7 +1850,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: -1, y: 10, z: 9, w: -12}
+  m_BoundingSphereOverride: {x: 0, y: 1.0398288e-29, z: 4.5905e-41, w: 1e-45}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -1939,6 +1950,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 12429263353345186, guid: 3e63abd30849c214ea3a2883b57ac6ea, type: 3}
+      propertyPath: spellListController
+      value: 
+      objectReference: {fileID: 813226927}
     - target: {fileID: 1380061834373209488, guid: 3e63abd30849c214ea3a2883b57ac6ea, type: 3}
       propertyPath: caster
       value: 

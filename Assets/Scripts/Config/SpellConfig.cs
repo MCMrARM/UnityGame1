@@ -23,6 +23,9 @@ namespace Mahou.Config
         public SpellType type;
         public float castTime;
         public SpellCooldownGroup cooldownGroup;
+
+        public string uiName;
+        public Texture2D uiIcon;
     }
 
 }

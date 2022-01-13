@@ -21,7 +21,7 @@ MonoBehaviour:
     damageMinAccumulatedValue: 15
     damageInterval: 1
     damageAmountFixed: 0
-    damageAmountHpPercent: 1
+    damageAmountHpPercent: 3
     damageType: 3
     specialEffectType: 1
     specialEffectMinAccumulatedValue: 5

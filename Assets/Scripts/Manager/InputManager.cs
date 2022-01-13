@@ -65,5 +65,18 @@ namespace Mahou
             return CanMovePlayer && Input.GetButton("Fire1");
         }
 
+        public int GetSpellSwitchInput()
+        {
+            if (Input.GetButtonDown("Spell1"))
+                return 1;
+            if (Input.GetButtonDown("Spell2"))
+                return 2;
+            if (Input.GetButtonDown("Spell3"))
+                return 3;
+            if (Input.GetButtonDown("Spell4"))
+                return 4;
+            return -1;
+        }
+
     }
 }

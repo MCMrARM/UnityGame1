@@ -1,8 +1,5 @@
 using Mahou.Combat;
 using Mahou.Config;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 

@@ -15,6 +15,8 @@ MonoBehaviour:
   type: 0
   castTime: 0
   cooldownGroup: {fileID: 11400000, guid: 37c069a7e25659942ba22278b926c0f9, type: 2}
+  uiName: Fireball
+  uiIcon: {fileID: 2800000, guid: 649fb93bad38ca14daa0da11e4b43b06, type: 3}
   prefab: {fileID: 7857681216157884790, guid: 8d30cb4b618302c4e813d4ca3cc02688, type: 3}
   projectileSpeed: 50
   launchLocation: 0

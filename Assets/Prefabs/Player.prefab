@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1791536032515050706}
   - component: {fileID: 1791536032515050705}
   - component: {fileID: 1791536032515050717}
+  - component: {fileID: 4142035645105590436}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -104,6 +105,10 @@ MonoBehaviour:
       valForL1: 1
       valForL50: 1
       valForL100: 1
+    AtkMulIce:
+      valForL1: 1
+      valForL50: 1
+      valForL100: 1
     DefBase:
       valForL1: 10
       valForL50: 400
@@ -113,6 +118,10 @@ MonoBehaviour:
       valForL50: 1
       valForL100: 1
     DefMulFire:
+      valForL1: 1
+      valForL50: 1
+      valForL100: 1
+    DefMulIce:
       valForL1: 1
       valForL50: 1
       valForL100: 1
@@ -174,6 +183,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathPanel: {fileID: 0}
+--- !u!114 &4142035645105590436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791536032515050709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70868de1402e5a74488e30d548c0d590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellList:
+  - {fileID: 11400000, guid: 7607617e90bd0264094d1b45a8d52039, type: 2}
+  - {fileID: 11400000, guid: f6bca9b57b9a4b64d898b96b431b53d9, type: 2}
+  activeSpellIndex: 0
 --- !u!1 &1791536032528797088
 GameObject:
   m_ObjectHideFlags: 0
