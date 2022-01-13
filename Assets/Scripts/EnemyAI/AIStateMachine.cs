@@ -7,6 +7,7 @@ namespace Mahou.EnemyAI
     public class AIStateMachine : MonoBehaviour
     {
         public SpellCaster spellCaster;
+        public EffectManager effectManager;
         public Rigidbody rigidbody;
         public Vector3 startPos;
         private AIState _currentState;
@@ -33,6 +34,8 @@ namespace Mahou.EnemyAI
         {
             if (spellCaster == null)
                 spellCaster = GetComponent<SpellCaster>();
+            if (effectManager == null)
+                effectManager = GetComponent<EffectManager>();
             if (rigidbody == null)
                 rigidbody = GetComponent<Rigidbody>();
             startPos = transform.position;
@@ -40,6 +43,9 @@ namespace Mahou.EnemyAI
 
         void Update()
         {
+            if (effectManager != null && effectManager.HasSpecialEffect(Config.AreaEffectSpecialEffectType.Frozen))
+                return;
+
             bool lastComplete = false;
             if (_currentState != null)
             {

@@ -91,6 +91,11 @@ namespace Mahou.Combat
                 var pspell = (ProjectileSpellConfig) spell;
                 SpawnProjectile(pspell.prefab, _locations[(int)pspell.launchLocation], _castingSpellTarget, _locationOptions[(int)pspell.launchLocation], pspell.projectileSpeed);
             }
+            else if (spell.type == SpellType.AttackPrefab)
+            {
+                var pspell = (AttackPrefabSpellConfig)spell;
+                SpawnAttackPrefab(pspell.prefab, _locations[(int)pspell.spawnLocation], _locationOptions[(int)pspell.spawnLocation], pspell.spawnDistance);
+            }
 
             _castingSpell = null;
         }
@@ -118,6 +123,15 @@ namespace Mahou.Combat
             projectileInfo.attacker = _statManager;
             projectileInfo.dmg = _statManager.CalculateAttack(projectileInfo.damageType);
             projectileInfo.ignoreCollider = _shootIgnoreCollider;
+        }
+
+        private void SpawnAttackPrefab(GameObject prefab, Transform spawnPoint, LocationOptions spawnPointOptions, float spawnDistance)
+        {
+            var rot = spawnPoint.rotation.eulerAngles;
+            if (spawnPointOptions != null && spawnPointOptions.useModelRotX)
+                rot.x = transform.rotation.eulerAngles.x;
+            var instance = Instantiate(prefab, spawnPoint.position, Quaternion.Euler(rot));
+            instance.transform.position += spawnDistance * (Quaternion.Euler(rot) * Vector3.forward);
         }
 
     }

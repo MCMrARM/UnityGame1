@@ -4,6 +4,7 @@
     {
         None,
         Physical,
-        Fire
+        Fire,
+        Ice
     }
 }

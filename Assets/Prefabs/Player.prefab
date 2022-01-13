@@ -143,9 +143,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62003d36b4f8af947a86b57467f55c29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _editorLocationKeys: 00000000
+  _editorLocationKeys: 0000000001000000
   _editorLocationValues:
   - {fileID: 1791536034257286265}
+  - {fileID: 1791536032515050710}
 --- !u!114 &1791536032515050705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,7 +274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RenderShadows: 1
   m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
+  m_RequiresOpaqueTextureOption: 1
   m_CameraType: 0
   m_Cameras:
   - {fileID: 1791536033418703256}

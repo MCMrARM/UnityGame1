@@ -70,6 +70,9 @@ namespace Mahou.EnemyAI
 
         private void OnDamageReceived(DamageType type, float dmg, float finalDmg, StatManager attacker)
         {
+            if (attacker == null)
+                return;
+
             AdvanceDamageFrames();
             if (_damageFrames[_currentDamageFrame] == null)
                 _damageFrames[_currentDamageFrame] = new Dictionary<StatManager, float>();

@@ -40,6 +40,12 @@ namespace Mahou.Combat
 
         public float CalculateDamage(DamageType type, float dmg, StatManager attacker)
         {
+            if (attacker == null)
+            {
+                Debug.Log("Damage: [Attacker not specified] FINAL=" + dmg);
+                return dmg;
+            }
+
             float defBase = baseStats.DefBase.Compute(level);
             float defTypeMul = baseStats.GetDefMul(type, level);
             float def = defBase * defTypeMul;

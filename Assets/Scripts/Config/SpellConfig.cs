@@ -5,6 +5,7 @@ namespace Mahou.Config
     public enum SpellCastLocation
     {
         ProjectilePrimary = 0,
+        CasterPosition,
 
         Count
     }
@@ -12,7 +13,8 @@ namespace Mahou.Config
 
     public enum SpellType
     {
-        Projectile
+        Projectile,
+        AttackPrefab
     }
 
     public class SpellConfig : ScriptableObject
