@@ -14,6 +14,9 @@ namespace Mahou
         [SerializeField]
         private RectTransform hpBarValParentTransform;
 
+        public Animator lvUpAnim;
+        private int _lastLevel = 1;
+
         public StatManager statManager;
 
         void Update()
@@ -25,6 +28,12 @@ namespace Mahou
 
             float hpPercent = statManager.MaxHp > 0f ? statManager.hp / statManager.MaxHp : 0f;
             hpBarValTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, hpBarValParentTransform.sizeDelta.x * hpPercent);
+
+            if (statManager.level > _lastLevel)
+            {
+                lvUpAnim.SetTrigger("LevelUp");
+                _lastLevel = statManager.level;
+            }
         }
     }
 
