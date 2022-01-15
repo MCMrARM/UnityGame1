@@ -65,6 +65,8 @@ GameObject:
   - component: {fileID: 8573229232600205713}
   - component: {fileID: 4799620351759127055}
   - component: {fileID: 4155813970609971752}
+  - component: {fileID: 6520069380955550464}
+  - component: {fileID: 9031655474090101908}
   m_Layer: 6
   m_Name: Wasp
   m_TagString: Untagged
@@ -292,6 +294,36 @@ MonoBehaviour:
   model: {fileID: 1724877076592571378}
   frozenMaterial: {fileID: 2100000, guid: ac8af49dfba58c647b6cbb7aad766c4f, type: 2}
   freezeAnimator: {fileID: 6685215932534258369}
+--- !u!114 &6520069380955550464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9017002802073493731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03b9997f58b59634faec501b7ee2ed45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9031655474090101908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9017002802073493731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9612fe025e2b88a439c0633becc9dc68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropItems:
+  - item: {fileID: 11400000, guid: 505ae02c25f3dc44fb92bd62e31efb02, type: 2}
+    dropAmount:
+      valForL1: 10
+      valForL50: 50
+      valForL100: 100
 --- !u!1001 &6179629220036670430
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -549,4 +581,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetRenderer: {fileID: 5375049622056234414}
-  destroyOnComplete: {fileID: 9017002802073493731}
+  deathHandler: {fileID: 6520069380955550464}

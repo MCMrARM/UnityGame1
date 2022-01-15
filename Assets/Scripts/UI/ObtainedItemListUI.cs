@@ -16,6 +16,7 @@ namespace Mahou.UI
         private float hidingItemsTime;
         public float hideItemAnimTime;
         private bool animatorShowTriggered;
+        private PlayerInventoryController _playerInventory;
 
         public ItemConfig testItemConfig;
 
@@ -23,6 +24,17 @@ namespace Mahou.UI
         {
             gainedItemBoxes = new ObtainedItemEntryUI[maxItemsAtTime];
             itemHeight = itemGainBoxPrefab.GetComponent<RectTransform>().sizeDelta.y;
+        }
+
+        private void OnEnable()
+        {
+            _playerInventory = PlayerInventoryController.Instance;
+            _playerInventory.onAddItem += AddItem;
+        }
+
+        private void OnDisable()
+        {
+            _playerInventory.onAddItem -= AddItem;
         }
 
         void Update()

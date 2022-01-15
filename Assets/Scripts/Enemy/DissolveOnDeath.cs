@@ -7,7 +7,7 @@ namespace Mahou
         private float progress = 0f;
         private bool disolving = false;
         public Renderer targetRenderer;
-        public GameObject destroyOnComplete;
+        public EnemyDeathHandler deathHandler;
 
         private void Update()
         {
@@ -20,7 +20,7 @@ namespace Mahou
                 if (progress >= 1)
                 {
                     disolving = false;
-                    Destroy(destroyOnComplete);
+                    deathHandler.KillAndDestroy();
                 }
             }
         }
