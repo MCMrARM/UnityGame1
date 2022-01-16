@@ -23,7 +23,7 @@ namespace Mahou
             foreach (var item in dropItems)
             {
                 var count = item.dropAmount.Compute(_statManager.level);
-                PlayerInventoryController.Instance.AddItem(item.item, (int) Mathf.Round(count));
+                PlayerManager.Instance.PlayerInventory.AddItem(item.item, (int) Mathf.Round(count));
             }
         }
 

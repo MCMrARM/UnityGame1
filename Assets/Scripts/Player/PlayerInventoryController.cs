@@ -1,8 +1,9 @@
 ﻿using Mahou.Config;
+using UnityEngine;
 
 namespace Mahou
 {
-    public class PlayerInventoryController : Singleton<PlayerInventoryController>
+    public class PlayerInventoryController : MonoBehaviour
     {
         public delegate void AddItemAction(ItemConfig item, int count);
         public AddItemAction onAddItem;

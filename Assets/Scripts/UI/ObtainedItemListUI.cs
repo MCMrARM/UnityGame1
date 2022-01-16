@@ -28,7 +28,7 @@ namespace Mahou.UI
 
         private void OnEnable()
         {
-            _playerInventory = PlayerInventoryController.Instance;
+            _playerInventory = PlayerManager.Instance.PlayerInventory;
             _playerInventory.onAddItem += AddItem;
         }
 
