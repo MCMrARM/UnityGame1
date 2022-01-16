@@ -54,7 +54,7 @@ namespace Mahou.EnemyAI
                 foreach (var e in _damageFrames[_currentDamageFrame])
                 {
                     _damageSum[e.Key] -= e.Value;
-                    if (_damageSum[e.Key] == 0)
+                    if (_damageSum[e.Key] <= 0)
                         _damageSum.Remove(e.Key);
                 }
                 _damageFrames[_currentDamageFrame].Clear();
@@ -66,9 +66,9 @@ namespace Mahou.EnemyAI
         {
             if (Time.time >= _currentDamageFrameEnd)
             {
-                int advanceCount = (int)((Time.time - _currentDamageFrameEnd) / damageFrameTime);
-                advanceCount = Math.Min(advanceCount, damageFrameCount);
-                for (; advanceCount > 0; --advanceCount)
+                int advanceCount = Mathf.CeilToInt((Time.time - _currentDamageFrameEnd) / damageFrameTime);
+                int i = Math.Min(advanceCount, damageFrameCount);
+                for (; i > 0; --i)
                     AdvanceDamageFrame();
                 _currentDamageFrameEnd += advanceCount * damageFrameTime;
             }
@@ -85,6 +85,7 @@ namespace Mahou.EnemyAI
             float prevTotalDmg = 0f;
             _damageFrames[_currentDamageFrame].TryGetValue(attacker, out prevTotalDmg);
             _damageFrames[_currentDamageFrame][attacker] = prevTotalDmg + finalDmg;
+            prevTotalDmg = 0f;
             _damageSum.TryGetValue(attacker, out prevTotalDmg);
             _damageSum[attacker] = prevTotalDmg + finalDmg;
             if (_topAttacker != null && _topAttacker != attacker && _damageSum[attacker]  > _damageSum[_topAttacker])
