@@ -35,13 +35,18 @@ namespace Mahou
             {
                 _xp += amount;
                 Debug.Log("Add XP: " + _xp + "/" + xpPerLevel.Compute(_level));
+                var levelUp = false;
                 while (_xp >= xpPerLevel.Compute(_level))
                 {
                     ++_level;
                     _xp -= (int)Mathf.Ceil(xpPerLevel.Compute(_level));
+                    levelUp = true;
                 }
-                _statManager.level = _level;
-                _statManager.hp = _statManager.MaxHp;
+                if (levelUp)
+                {
+                    _statManager.level = _level;
+                    _statManager.hp = _statManager.MaxHp;
+                }
             }
         }
     }
