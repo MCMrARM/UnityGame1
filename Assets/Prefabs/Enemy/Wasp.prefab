@@ -222,6 +222,7 @@ MonoBehaviour:
     nearingMoveSpeedMul: 1
     distancingMoveSpeedMul: 1
   wanderRange: 2
+  alertRange: 10
 --- !u!114 &840278258415830116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,6 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageFrameCount: 5
   damageFrameTime: 3
+  alertExpireTime: 1
 --- !u!114 &4799620351759127055
 MonoBehaviour:
   m_ObjectHideFlags: 0

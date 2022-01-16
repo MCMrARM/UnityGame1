@@ -13,6 +13,7 @@ namespace Mahou.EnemyAI
         private bool idle = true;
         public KeepWithinRangeConfig farRangeKeepConfig;
         public float wanderRange;
+        public float alertRange;
 
         protected override void Start()
         {
@@ -34,6 +35,7 @@ namespace Mahou.EnemyAI
                 if (target != null)
                 {
                     idle = false;
+                    _targetSelector.AlertNearby(alertRange, target);
                     CurrentState = new AIState_Wasp_FarAttack() { spell = attackSpell, target = target.transform, rangeKeepConfig = farRangeKeepConfig };
                 }
             }

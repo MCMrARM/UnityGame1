@@ -1,4 +1,5 @@
 ﻿using Mahou.Combat;
+using Mahou.Config;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +22,11 @@ namespace Mahou.EnemyAI
         private float _currentDamageFrameEnd = 0;
 
         private StatManager _topAttacker;
+
+        public float alertExpireTime = 1f;
+
+        private GameObject _alertAttacker;
+        private float _alertCurrentExpire;
 
         private void Start()
         {
@@ -105,9 +111,43 @@ namespace Mahou.EnemyAI
         public GameObject GetTarget()
         {
             UpdateTopAttacker();
+            UpdateAlert();
+
             if (_topAttacker != null)
                 return _topAttacker.gameObject;
-            return _foeLocator.GetClosestFoe();
+            var closest = _foeLocator.GetClosestFoe();
+            if (closest != null)
+                return closest;
+            return _alertAttacker;
+        }
+
+        private void UpdateAlert()
+        {
+            if (_alertCurrentExpire != 0f && Time.time > _alertCurrentExpire)
+            {
+                _alertAttacker = null;
+                _alertCurrentExpire = 0f;
+            }
+        }
+
+        public void OnAlert(GameObject attacker)
+        {
+            _alertAttacker = attacker;
+            _alertCurrentExpire = Time.time + 1f;
+        }
+
+        // TODO: should this be here?
+        public void AlertNearby(float range, GameObject attacker)
+        {
+            Collider[] enemiesInRange = Physics.OverlapSphere(transform.position, range, LayerMasks.MaskEnemy);
+            foreach (Collider c in enemiesInRange)
+            {
+                AITargetSelector selector;
+                if (c.TryGetComponent<AITargetSelector>(out selector))
+                {
+                    selector.OnAlert(attacker);
+                }
+            }
         }
 
     }
