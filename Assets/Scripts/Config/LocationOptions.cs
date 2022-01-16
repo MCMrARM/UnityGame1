@@ -6,6 +6,7 @@ namespace Mahou.Config
     {
         public bool canTargetDirect;
         public bool useModelRotX;
+        public bool useModelRotY;
     }
 
 }

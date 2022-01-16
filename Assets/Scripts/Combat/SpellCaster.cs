@@ -113,6 +113,8 @@ namespace Mahou.Combat
             var rot = shootPoint.rotation.eulerAngles;
             if (shootPointOptions.useModelRotX)
                 rot.x = transform.rotation.eulerAngles.x;
+            if (shootPointOptions.useModelRotY)
+                rot.y = transform.rotation.eulerAngles.y;
             var projectile = Instantiate(prefab, shootPoint.position, Quaternion.identity);
             if (shootPointOptions.canTargetDirect)
                 projectile.GetComponent<Rigidbody>().velocity = (targetPoint - shootPoint.position).normalized * shootSpeed;
@@ -130,6 +132,8 @@ namespace Mahou.Combat
             var rot = spawnPoint.rotation.eulerAngles;
             if (spawnPointOptions != null && spawnPointOptions.useModelRotX)
                 rot.x = transform.rotation.eulerAngles.x;
+            if (spawnPointOptions != null && spawnPointOptions.useModelRotY)
+                rot.y = transform.rotation.eulerAngles.y;
             var instance = Instantiate(prefab, spawnPoint.position, Quaternion.Euler(rot));
             instance.transform.position += spawnDistance * (Quaternion.Euler(rot) * Vector3.forward);
         }

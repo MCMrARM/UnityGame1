@@ -59,7 +59,7 @@ namespace Mahou.EnemyAI
             var newAngles = Quaternion.LookRotation(pos - t.position, Vector3.up).eulerAngles;
             var currentAngles = t.rotation.eulerAngles;
             float curRotY = currentAngles.y % 360;
-            float targetRotY = (180 + newAngles.y) % 360;
+            float targetRotY = newAngles.y % 360;
             if (curRotY == targetRotY)
                 return false;
             if (targetRotY > curRotY && curRotY - (targetRotY - 360) < targetRotY - curRotY)
@@ -77,7 +77,7 @@ namespace Mahou.EnemyAI
             var newAngles = Quaternion.LookRotation(pos - t.position, Vector3.up).eulerAngles;
             var currentAngles = t.rotation.eulerAngles;
             float curRotY = currentAngles.y % 360;
-            float targetRotY = (180 + newAngles.y) % 360;
+            float targetRotY = newAngles.y % 360;
             return Math.Min(Mathf.Abs(targetRotY - curRotY), Mathf.Abs(curRotY + 360 - targetRotY)) < range;
         }
 
