@@ -1336,7 +1336,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16772425
+    rgba: 4294962505
   m_fontColor: {r: 0.28773582, g: 0.9290376, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1678,7 +1678,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 7830015
+    rgba: 4286020095
   m_fontColor: {r: 1, g: 0.47293308, b: 0.4669811, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1812,7 +1812,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 5388800
+    rgba: 4283578880
   m_fontColor: {r: 0, g: 0.22911055, b: 0.3207547, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -2080,7 +2080,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 11993085
+    rgba: 4290183165
   m_fontColor: {r: 0.9936758, g: 1, b: 0.7122642, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -2147,6 +2147,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3117826839726428140}
     m_Modifications:
+    - target: {fileID: 2634667469507824473, guid: ff8d0d54b08d8ac49a97050eac7aa20a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UI_QuitToMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2634667469507824475, guid: ff8d0d54b08d8ac49a97050eac7aa20a, type: 3}
+      propertyPath: m_Name
+      value: Btn Quit to Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2634667469541287054, guid: ff8d0d54b08d8ac49a97050eac7aa20a, type: 3}
+      propertyPath: m_text
+      value: Quit to Menu
+      objectReference: {fileID: 0}
     - target: {fileID: 2634667469731490469, guid: ff8d0d54b08d8ac49a97050eac7aa20a, type: 3}
       propertyPath: m_Name
       value: PausePanel

@@ -18,9 +18,10 @@ namespace Mahou.UI
             GameManager.Instance.Paused = false;
         }
 
-        public void UI_Quit()
+        public void UI_QuitToMenu()
         {
-            Application.Quit();
+            SceneManager.LoadScene("MainMenuScene");
+            GameManager.Instance.Paused = false;
         }
 
     }
