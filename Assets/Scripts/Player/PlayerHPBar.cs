@@ -24,7 +24,7 @@ namespace Mahou
             foreach (var lbl in levelLabel)
                 lbl.text = "Lv. " + statManager.level;
             foreach (var lbl in hpLabel)
-                lbl.text = statManager.hp + "/" + statManager.MaxHp;
+                lbl.text = Mathf.RoundToInt(statManager.hp) + "/" + Mathf.RoundToInt(statManager.MaxHp);
 
             float hpPercent = statManager.MaxHp > 0f ? statManager.hp / statManager.MaxHp : 0f;
             hpBarValTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, hpBarValParentTransform.sizeDelta.x * hpPercent);
