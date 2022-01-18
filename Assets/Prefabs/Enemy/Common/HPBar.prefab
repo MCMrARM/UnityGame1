@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2945530415437923170}
   - component: {fileID: 2945530415437923171}
   - component: {fileID: 5118861381011304444}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HPBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 2945530415674756136}
   - component: {fileID: 2945530415674756138}
   - component: {fileID: 2945530415674756137}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: LevelTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 2945530416815859723}
   - component: {fileID: 2945530416815859722}
   - component: {fileID: 2945530416815859724}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HPBarFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 2945530416902968476}
   - component: {fileID: 2945530416902968478}
   - component: {fileID: 2945530416902968477}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HPBarBg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -460,7 +460,7 @@ GameObject:
   - component: {fileID: 2945530417192552307}
   - component: {fileID: 2945530417192552309}
   - component: {fileID: 2945530417192552308}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HPBarFillVal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -535,7 +535,7 @@ GameObject:
   - component: {fileID: 3727260494784167796}
   - component: {fileID: 5760890662308846163}
   - component: {fileID: 1193630809465615068}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HPBarLagFillVal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
