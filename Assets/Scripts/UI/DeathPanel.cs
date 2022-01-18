@@ -8,14 +8,12 @@ namespace Mahou.UI
         public void UI_Retry()
         {
             var scene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(scene.name);
-            GameManager.Instance.ResetGame();
+            GameManager.Instance.LoadIntoLevel(scene.name);
         }
 
         public void UI_MainMenu()
         {
-            SceneManager.LoadScene("MainMenu");
-            GameManager.Instance.ResetGame();
+            GameManager.Instance.LoadMainMenu();
         }
 
     }

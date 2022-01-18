@@ -1,10 +1,17 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 namespace Mahou
 {
     class GameManager : Singleton<GameManager>
     {
+
+        public GameObject loadingPrefab;
+        private GameObject loadingPrefabInstance;
+        private Coroutine loadSceneCoroutine;
+        private string loadSceneName;
 
         private bool _paused = false;
         public bool Paused
@@ -25,9 +32,39 @@ namespace Mahou
 
         public void ResetGame()
         {
-            Paused = false;
             WellKnownUIManager.Instance.HideUI(WellKnownUIType.DeathPanel);
             WellKnownUIManager.Instance.HideUI(WellKnownUIType.WinPanel);
+        }
+
+        private IEnumerator DoLoadScene()
+        {
+            string lLoadSceneName;
+            do
+            {
+                lLoadSceneName = loadSceneName;
+
+                var asyncLoad = SceneManager.LoadSceneAsync(lLoadSceneName);
+                while (!asyncLoad.isDone)
+                    yield return null;
+            } while (lLoadSceneName != loadSceneName);
+
+            Paused = false;
+        }
+
+        public void LoadIntoLevel(string level)
+        {
+            Paused = true;
+            ResetGame();
+
+            loadSceneName = level;
+            loadingPrefabInstance = Instantiate(loadingPrefab);
+            if (loadSceneCoroutine == null)
+                StartCoroutine(DoLoadScene());
+        }
+
+        public void LoadMainMenu()
+        {
+            LoadIntoLevel("MainMenuScene");
         }
 
     }

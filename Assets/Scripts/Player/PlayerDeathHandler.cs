@@ -15,9 +15,8 @@ namespace Mahou
 
         public void Update()
         {
-            if (!_statManager.Alive)
+            if (!_statManager.Alive && !GameManager.Instance.Paused)
             {
-                GameManager.Instance.Paused = false;
                 WellKnownUIManager.Instance.ShowUI(WellKnownUIType.DeathPanel);
             }
         }

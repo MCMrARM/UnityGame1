@@ -14,14 +14,12 @@ namespace Mahou.UI
         public void UI_Reload()
         {
             var scene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(scene.name);
-            GameManager.Instance.ResetGame();
+            GameManager.Instance.LoadIntoLevel(scene.name);
         }
 
         public void UI_QuitToMenu()
         {
-            SceneManager.LoadScene("MainMenuScene");
-            GameManager.Instance.ResetGame();
+            GameManager.Instance.LoadMainMenu();
         }
 
     }

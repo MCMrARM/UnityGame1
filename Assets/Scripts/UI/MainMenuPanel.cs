@@ -1,6 +1,4 @@
-﻿using UnityEngine.SceneManagement;
-
-namespace Mahou.UI
+﻿namespace Mahou.UI
 {
     class MainMenuPanel : MenuPanel
     {
@@ -9,8 +7,7 @@ namespace Mahou.UI
 
         public void UI_LoadLevel()
         {
-            var scene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(levelNameDropDown.options[levelNameDropDown.value].text + "Scene");
+            GameManager.Instance.LoadIntoLevel(levelNameDropDown.options[levelNameDropDown.value].text + "Scene");
         }
 
     }
