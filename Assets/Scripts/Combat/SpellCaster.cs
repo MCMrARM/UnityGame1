@@ -23,6 +23,8 @@ namespace Mahou.Combat
         private float _castingSpellStartTime;
         private Vector3 _castingSpellTarget;
 
+        public bool projectilesCanHurtEnemies;
+
         public SpellConfig CastingSpell
         {
             get => _castingSpell;
@@ -125,6 +127,7 @@ namespace Mahou.Combat
             projectileInfo.attacker = _statManager;
             projectileInfo.dmg = _statManager.CalculateAttack(projectileInfo.damageType);
             projectileInfo.ignoreCollider = _shootIgnoreCollider;
+            projectileInfo.canHurtEnemies = projectilesCanHurtEnemies;
         }
 
         private void SpawnAttackPrefab(GameObject prefab, Transform spawnPoint, LocationOptions spawnPointOptions, float spawnDistance)

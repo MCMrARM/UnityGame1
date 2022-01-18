@@ -239,6 +239,7 @@ MonoBehaviour:
   _editorLocationKeys: 00000000
   _editorLocationValues:
   - {fileID: 6562315229100365449}
+  projectilesCanHurtEnemies: 0
   targetAnimator: {fileID: 6685215932534258369}
 --- !u!114 &57933466791392755
 MonoBehaviour:

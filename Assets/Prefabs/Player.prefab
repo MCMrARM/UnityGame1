@@ -158,6 +158,7 @@ MonoBehaviour:
   _editorLocationValues:
   - {fileID: 1791536034257286265}
   - {fileID: 1791536032515050710}
+  projectilesCanHurtEnemies: 1
 --- !u!114 &1791536032515050705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,7 +184,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c555076339fb7e54e9ef2859b717bb06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathPanel: {fileID: 0}
 --- !u!114 &4142035645105590436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,3 +504,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canTargetDirect: 1
   useModelRotX: 0
+  useModelRotY: 0

@@ -10,6 +10,7 @@ namespace Mahou
         public float lifetime;
         public DamageType damageType;
         public Collider ignoreCollider;
+        public bool canHurtEnemies;
 
         [HideInInspector]
         public float dmg;
@@ -32,9 +33,12 @@ namespace Mahou
                 return;
             if (Tags.IsValidTarget(other.gameObject.tag))
             {
-                var dmgReceiver = other.gameObject.GetComponent<DamageReceiverBase>();
-                if (dmgReceiver != null)
-                    dmgReceiver.OnReceiveDamage(damageType, dmg, attacker);
+                if (canHurtEnemies || Tags.PLAYER == other.gameObject.tag)
+                {
+                    var dmgReceiver = other.gameObject.GetComponent<DamageReceiverBase>();
+                    if (dmgReceiver != null)
+                        dmgReceiver.OnReceiveDamage(damageType, dmg, attacker);
+                }
 
                 Destroy(gameObject);
             }
