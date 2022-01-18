@@ -33,6 +33,10 @@ namespace Mahou
             {
                 config.target.GetComponent<Animator>().SetTrigger(config.param);
             }
+            else if (config.type == EnemyGroupActionType.WinGame)
+            {
+                WellKnownUIManager.Instance.ShowUI(WellKnownUIType.WinPanel);
+            }
         }
 
     }

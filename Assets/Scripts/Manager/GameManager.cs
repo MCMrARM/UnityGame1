@@ -23,5 +23,12 @@ namespace Mahou
 
         public UnityAction PauseAction;
 
+        public void ResetGame()
+        {
+            Paused = false;
+            WellKnownUIManager.Instance.HideUI(WellKnownUIType.DeathPanel);
+            WellKnownUIManager.Instance.HideUI(WellKnownUIType.WinPanel);
+        }
+
     }
 }

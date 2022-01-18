@@ -15,13 +15,13 @@ namespace Mahou.UI
         {
             var scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(scene.name);
-            GameManager.Instance.Paused = false;
+            GameManager.Instance.ResetGame();
         }
 
         public void UI_QuitToMenu()
         {
             SceneManager.LoadScene("MainMenuScene");
-            GameManager.Instance.Paused = false;
+            GameManager.Instance.ResetGame();
         }
 
     }

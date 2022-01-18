@@ -5,7 +5,8 @@ namespace Mahou.Config
 {
     public enum EnemyGroupActionType
     {
-        ExecuteAnimatorTrigger
+        ExecuteAnimatorTrigger,
+        WinGame
     }
 
     [Serializable]

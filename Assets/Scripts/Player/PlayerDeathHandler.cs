@@ -7,7 +7,6 @@ namespace Mahou
     {
 
         private StatManager _statManager;
-        public GameObject deathPanel;
 
         private void Start()
         {
@@ -19,7 +18,7 @@ namespace Mahou
             if (!_statManager.Alive)
             {
                 GameManager.Instance.Paused = false;
-                deathPanel.SetActive(true);
+                WellKnownUIManager.Instance.ShowUI(WellKnownUIType.DeathPanel);
             }
         }
 
