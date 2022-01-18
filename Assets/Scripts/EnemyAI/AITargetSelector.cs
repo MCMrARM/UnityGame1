@@ -146,7 +146,12 @@ namespace Mahou.EnemyAI
                 AITargetSelector selector;
                 if (c.TryGetComponent<AITargetSelector>(out selector))
                 {
-                    selector.OnAlert(attacker);
+                    RaycastHit hit;
+                    if (Physics.Raycast(transform.position, c.transform.position - transform.position, out hit))
+                    {
+                        if (hit.transform == selector.transform)
+                            selector.OnAlert(attacker);
+                    }
                 }
             }
         }
